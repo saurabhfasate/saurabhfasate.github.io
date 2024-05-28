@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Calibri, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 calc((100vw - 1300px) / 2);
+        }
+
+        .logo {
+            color: #000;
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 0 2rem;
+        }
+
+        .logo:hover {
+            color: blue;
+        }
+
+        .logo-image {
+            height: 35px;
+            border-radius: 15%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            padding: 0 1.5rem;
+        }
+
+        nav a:hover {
+            font-size: 1.1rem;
+            color: blue;
+        }
+
+        .hero {
+            background-color: #d8c5b3;
+            margin: 0.1rem 0;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 95vh;
+            padding: 3rem calc((100vw - 1300px) / 2);
+        }
+
+        .column-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: #000;
+            padding: 0 2rem;
+        }
+
+        .column-left h1 {
+            margin-bottom: 1rem;
+            font-size: 3rem;
+        }
+
+        .column-left p {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            border: none;
+            color: white;
+            background: #000;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .column-right {
+            display: flex;
+			flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer {
+            bottom: 60px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin: 10px 0;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Nav -->
+    <nav>
+        <div class="logo">
+            <img src="logo.png" class="logo-image" alt="Logo">
+            Saurabh Fasate
+        </div>
+        <div class="nav-items">
+            <a href="#home">ABOUT ME</a>
+            <a href="#education">EDUCATION</a>
+            <a href="#resume">RESUME</a>
+            <a href="#blogs">BLOGS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+    <!-- Home/About me/Index -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="column-right">
+                <img src="image.jpg" class="hero-image" alt="Hero Image">
+                <h1>&nbsp;Saurabh Fasate</h1>
+                <h1>&nbsp;</h1>
+            <div style="text-align: justify"> Welcome to my profile. Currently, I am a software developer with 2+ years of experience with a Master's degree from IIT Kanpur. 
+			<p>This webpage is one of my projects. It is hosted utilising the free service of GitHub Pages. This page is updated frequently on GitHub. Which is intern using the CI/CD tool of GitHub "GitHub Action".</p>
+			</div>
+			</div>
+			
+            <div class="column-left">
+                <h1>Hello,</h1>
+                <p>This is who I am and what I do.</p>
+                <a>
+				<button href="#education">Education</button>  
+				<button href="#projects">Projects</button>
+				</a>
+				<p></p>
+				<a>
+				<button href="#blogs">My Blogs</button>  
+				<button href="#contact">contact</button>
+				</a>
+            </div>
+        </div>
+    </section>
+    <!-- Education -->
+    <section id="education" class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <p>Education</p>
+            </div>
+        </div>
+    </section>
+    <!-- Resume -->
+    <section id="resume" class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <p>Click below to access the Resume</p>
+    <!-- Resume 
+     Resume -->
+				<a class="button line-btn-dark btn-icon btn-radius" href="Saurabh_Resume.pdf" title="download resume" download>
+				<button>Saurabh Resume</button>  
+    <!-- Resume 
+     Resume -->
+            </div>
+        </div>
+    </section>
+    <!-- Blogs -->
+    <section id="blogs" class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <p>Blogs</p>
+            </div>
+        </div>
+    </section>
+    <!-- Projects -->
+    <section id="projects" class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <p>Projects</p>
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <p>Hi, You can contact me using below details</p>
+                <button>Call: +91-8888805670</button>
+                <p></p>
+                <button>WriteToMe: <a href="mailto:saurabhphasate@gmail.com">saurabhphasate@gmail.com</a></button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div class="footer">
+        <a>© 2024 by Saurabh Fasate</a>
+        <div>
+            Call: +91-8888805670 | WriteToMe: <a href="mailto:saurabhphasate@gmail.com">saurabhphasate@gmail.com</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="logo.png">
     <title>Saurabh Fasate</title>
     <style>
         * {
@@ -14,20 +15,24 @@
 
         nav {
             position: fixed;
+            top: 0;
             width: 100%;
             height: 70px;
             background: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 calc((100vw - 1300px) / 2);
+            padding: 0 1rem;
+            z-index: 1000;
         }
 
         .logo {
+            display: flex;
+            align-items: center;
             color: #000;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         .logo:hover {
@@ -37,12 +42,18 @@
         .logo-image {
             height: 35px;
             border-radius: 15%;
+            margin-right: 0.5rem;
+        }
+
+        .nav-items {
+            display: flex;
         }
 
         nav a {
             text-decoration: none;
             color: black;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
+            font-size: 1rem;
         }
 
         nav a:hover {
@@ -52,77 +63,137 @@
 
         .hero {
             background-color: #d8c5b3;
-            margin: 0.1rem 0;
+            margin-top: 70px;
+            padding: 1rem 0;
         }
 
         .hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            height: 95vh;
-            padding: 3rem calc((100vw - 1300px) / 2);
+            height: calc(100vh - 70px);
+            padding: 3rem 1rem;
         }
 
-        .column-left {
+        .column-left, .column-right {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #000;
-            padding: 0 2rem;
+						
+            padding: 1rem;
         }
 
         .column-left h1 {
             margin-bottom: 1rem;
-            font-size: 3rem;
+            font-size: 2rem;
+            text-align: center;
         }
 
         .column-left p {
             margin-bottom: 2rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             line-height: 1.5;
+            text-align: center;
+        }
+
+        .column-right {
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 140px;
+            border-radius: 50%;
         }
 
         button {
-            padding: 1rem 3rem;
+            padding: 0.5rem 1rem;
             font-size: 1rem;
             border: none;
             color: white;
             background: #000;
             cursor: pointer;
-            border-radius: 50px;
+            border-radius: 25px;
+            margin: 0.5rem;
         }
 
         button:hover {
             background: #fff;
             color: #000;
-        }
+            border: 1px solid #000;
 
-        .column-right {
-            display: flex;
-			flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-        }
+					   
+						  
+						  
+									
+								
+							
+		 
 
-        .hero-image {
-            height: 140px;
-            border-radius: 50%;
+					 
+						  
+							   
         }
 
         @media screen and (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
             }
+
+            .column-left, .column-right {
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .nav-items {
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: white;
+                width: 100%;
+                display: none;
+            }
+
+            nav a {
+                padding: 1rem;
+                border-top: 1px solid #ddd;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a:first-child {
+                border-top: none;
+            }
+
+            nav.active .nav-items {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                padding: 1rem;
+            }
+
+            .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background: #000;
+                margin: 3px 0;
+            }
         }
 
         .footer {
-            bottom: 60px;
+            padding: 0.3rem;
             width: 100%;
             text-align: center;
-            font-size: 16px;
+            font-size: 1rem;
             color: #888;
-            margin: 10px 0;
+            background: #f1f1f1;
+            position: fixed;
+            bottom: 0;
         }
 
         .footer a {
@@ -138,6 +209,11 @@
             <img src="logo.png" class="logo-image" alt="Logo">
             Saurabh Fasate
         </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="nav-items">
             <a href="#home">ABOUT ME</a>
             <a href="#education">EDUCATION</a>
@@ -152,25 +228,25 @@
         <div class="hero-container">
             <div class="column-right">
                 <img src="image.jpg" class="hero-image" alt="Hero Image">
-                <h1>&nbsp;Saurabh Fasate</h1>
-                <h1>&nbsp;</h1>
-            <div style="text-align: justify"> Welcome to my profile. Currently, I am a software developer with 2+ years of experience with a Master's degree from IIT Kanpur. 
-			<p>This webpage is one of my projects. It is hosted utilising the free service of GitHub Pages. This page is updated frequently on GitHub. Which is intern using the CI/CD tool of GitHub "GitHub Action".</p>
-			</div>
-			</div>
-			
+                <h1>Saurabh Fasate</h1>
+							   
+																																											  
+                <p>Welcome to my profile. Currently, I am a software developer with 2+ years of experience with a Master's degree from IIT Kanpur. This webpage is one of my projects. It is hosted utilising the free service of GitHub Pages. This page is updated frequently on GitHub. Which is intern using the CI/CD tool of GitHub "GitHub Action".</p>
+		 
+            </div>
+   
             <div class="column-left">
                 <h1>Hello,</h1>
                 <p>This is who I am and what I do.</p>
-                <a>
-				<button href="#education">Education</button>  
-				<button href="#projects">Projects</button>
-				</a>
-				<p></p>
-				<a>
-				<button href="#blogs">My Blogs</button>  
-				<button href="#contact">contact</button>
-				</a>
+                <div>
+                    <button onclick="location.href='#education'">Education</button>
+                    <button onclick="location.href='#projects'">Projects</button>
+                </div>
+                <div>
+	   
+                    <button onclick="location.href='#blogs'">My Blogs</button>
+                    <button onclick="location.href='#contact'">Contact</button>
+                </div>
             </div>
         </div>
     </section>
@@ -178,7 +254,8 @@
     <section id="education" class="hero">
         <div class="hero-container">
             <div class="column-left">
-                <p>Education</p>
+                <h1>Education</h1>
+                <!-- Education content goes here -->
             </div>
         </div>
     </section>
@@ -187,12 +264,12 @@
         <div class="hero-container">
             <div class="column-left">
                 <p>Click below to access the Resume</p>
-    <!-- Resume 
-     Resume -->
-				<a class="button line-btn-dark btn-icon btn-radius" href="Saurabh_Resume.pdf" title="download resume" download>
-				<button>Saurabh Resume</button>  </a>
-    <!-- Resume 
-     Resume -->
+				
+			   
+                <a href="Saurabh_Resume.pdf" title="Download Resume" download>
+                    <button>Saurabh Resume</button>
+                </a>
+			   
             </div>
         </div>
     </section>
@@ -200,7 +277,8 @@
     <section id="blogs" class="hero">
         <div class="hero-container">
             <div class="column-left">
-                <p>Blogs</p>
+                <h1>Blogs</h1>
+                <!-- Blog content goes here -->
             </div>
         </div>
     </section>
@@ -208,7 +286,8 @@
     <section id="projects" class="hero">
         <div class="hero-container">
             <div class="column-left">
-                <p>Projects</p>
+                <h1>Projects</h1>
+                <!-- Project content goes here -->
             </div>
         </div>
     </section>
@@ -217,7 +296,7 @@
         <div class="hero-container">
             <div class="column-left">
                 <p>Hi, You can contact me using below details</p>
-                <button>WriteToMe: <a href="mailto:saurabhphasate@gmail.com">saurabhphasate@gmail.com</a></button>
+                <button>Email: <a href="mailto:saurabhphasate@gmail.com" style="color=Red">saurabhphasate@gmail.com</a></button>
                 <p></p>
                 <button>Call: +91-8888805670</button>
             </div>
@@ -225,10 +304,17 @@
     </section>
     <!-- Footer -->
     <div class="footer">
-        <a>© 2024 by Saurabh Fasate</a>
-        <div>
-            Call: +91-8888805670 | WriteToMe: <a href="mailto:saurabhphasate@gmail.com">saurabhphasate@gmail.com</a>
-        </div>
+        <p>© 2024 by Saurabh Fasate</p>
+			 
+        <p>Call: +91-8888805670 | WriteToMe: <a href="mailto:saurabhphasate@gmail.com">saurabhphasate@gmail.com</a></p>
+			  
     </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
